@@ -2,13 +2,20 @@ import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ArticleModule } from './article/article.module';
-import { AuthModule } from './auth/auth.module';
+import { AppointmentBookingModule } from './appointment-booking/appointment-booking.module';
+import { AppointmentConfirmationModule } from './appointment-confirmation/appointment-confirmation.module';
+import { DoctorAppointmentManagementModule } from './doctor-appointment-management/doctor-appointment-management.module';
+import { DoctorAvailabilityModule } from './doctor-availability/doctor-availability.module';
 import { SharedModule } from './shared/shared.module';
-import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [SharedModule, UserModule, AuthModule, ArticleModule],
+  imports: [
+    SharedModule,
+    DoctorAvailabilityModule,
+    AppointmentBookingModule,
+    AppointmentConfirmationModule,
+    DoctorAppointmentManagementModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
