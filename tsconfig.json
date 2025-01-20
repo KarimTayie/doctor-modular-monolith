@@ -6,6 +6,14 @@
       "ES2022"
     ],
     "baseUrl": "./",
+    "paths": {
+      "@Shared/*": [
+        "src/shared/*"
+      ],
+      "@DoctorAvailability/*": [
+        "src/doctor-availability/*"
+      ],
+    },
     "outDir": "./dist",
     "strict": true,
     "strictPropertyInitialization": false,
