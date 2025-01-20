@@ -4,13 +4,13 @@ import { RequestContext } from '@Shared/request-context/request-context.dto';
 import { plainToClass } from 'class-transformer';
 import { MoreThanOrEqual } from 'typeorm';
 
-import { AppointmentOutput } from '../../internal/api/dtos/appointment-output.dto';
 import {
   Appointment,
   AppointmentStatus,
 } from '../../internal/infrastructure/db/appointment.entity';
 import { AppointmentRepository } from '../../internal/infrastructure/repositories/appointment.repository';
 import { UpdateAppointmentInput } from '../dtos/appointment-input.dto';
+import { AppointmentOutput } from '../dtos/appointment-output.dto';
 import { IAppointmentAPIs } from '../interfaces/appointment-apis.interface';
 
 @Injectable()

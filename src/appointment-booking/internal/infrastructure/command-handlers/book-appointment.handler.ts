@@ -4,7 +4,7 @@ import { EventEmitter2 } from '@nestjs/event-emitter';
 import { AppLogger } from '@Shared/logger/logger.service';
 import { plainToClass } from 'class-transformer';
 
-import { AppointmentOutput } from '../../api/dtos/appointment-output.dto';
+import { AppointmentOutput } from '../../../shared/dtos/appointment-output.dto';
 import { BookAppointmentCommand } from '../../application/commands/book-appointment.command';
 import { AppointmentConfirmedEvent } from '../../events/appointment-confirmed.event';
 import { Appointment } from '../db/appointment.entity';

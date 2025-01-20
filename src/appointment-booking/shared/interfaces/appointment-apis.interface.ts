@@ -1,6 +1,6 @@
 import { RequestContext } from '@Shared/request-context/request-context.dto';
 
-import { AppointmentOutput } from '../../internal/api/dtos/appointment-output.dto';
+import { AppointmentOutput } from '../dtos/appointment-output.dto';
 import { UpdateAppointmentInput } from '../dtos/appointment-input.dto';
 
 export interface IAppointmentAPIs {

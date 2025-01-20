@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { RequestContext } from '@Shared/request-context/request-context.dto';
 
-import { AppointmentOutput } from '../../../../appointment-booking/internal/api/dtos/appointment-output.dto';
 import { UpdateAppointmentInput } from '../../../../appointment-booking/shared/dtos/appointment-input.dto';
+import { AppointmentOutput } from '../../../../appointment-booking/shared/dtos/appointment-output.dto';
 import { IAppointmentAPIs } from '../../../../appointment-booking/shared/interfaces/appointment-apis.interface';
 
 @Injectable()

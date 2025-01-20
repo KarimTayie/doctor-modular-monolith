@@ -16,9 +16,9 @@ import { AppLogger } from '@Shared/logger/logger.service';
 import { ReqContext } from '@Shared/request-context/req-context.decorator';
 import { RequestContext } from '@Shared/request-context/request-context.dto';
 
+import { AppointmentOutput } from '../../../shared/dtos/appointment-output.dto';
 import { BookAppointmentCommand } from '../../application/commands/book-appointment.command';
 import { BookAppointmentInput } from '../dtos/appointment-input.dto';
-import { AppointmentOutput } from '../dtos/appointment-output.dto';
 
 @ApiTags('appointments')
 @Controller('appointments')
