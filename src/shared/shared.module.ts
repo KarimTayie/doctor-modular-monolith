@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { configModuleOptions } from './configs/module-options';
@@ -21,7 +22,10 @@ import { AppLoggerModule } from './logger/logger.module';
         database: configService.get<string>('database.name'),
         username: configService.get<string>('database.user'),
         password: configService.get<string>('database.pass'),
-        entities: [__dirname + '/../**/entities/*.entity{.ts,.js}'],
+        entities: [
+          __dirname + '/../**/entities/*.entity{.ts,.js}',
+          __dirname + '/../**/db/*.entity{.ts,.js}',
+        ],
         // Timezone configured on the Postgres server.
         // This is used to typecast server date/time values to JavaScript Date object and vice versa.
         timezone: 'Z',
@@ -30,8 +34,9 @@ import { AppLoggerModule } from './logger/logger.module';
       }),
     }),
     AppLoggerModule,
+    EventEmitterModule.forRoot(),
   ],
-  exports: [AppLoggerModule, ConfigModule],
+  exports: [AppLoggerModule, ConfigModule, EventEmitterModule],
   providers: [
     { provide: APP_INTERCEPTOR, useClass: LoggingInterceptor },
 
